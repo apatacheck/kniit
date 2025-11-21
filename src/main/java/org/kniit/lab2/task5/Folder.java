@@ -7,6 +7,7 @@ class Folder extends FileSystemComponent {
     private List<FileSystemComponent> children = new ArrayList<>();
 
     public Folder(String name) {
+
         super(name);
     }
 
@@ -21,11 +22,13 @@ class Folder extends FileSystemComponent {
 
     @Override
     public void add(FileSystemComponent component) {
+
         children.add(component);
     }
 
     @Override
     public void remove(FileSystemComponent component) {
+
         children.remove(component);
     }
 
