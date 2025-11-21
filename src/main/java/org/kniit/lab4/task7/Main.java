@@ -13,7 +13,7 @@ public class Main {
             list.add(scanner.nextLine().trim());
         }
         scanner.close();
-        String[] words = list.toArray(new String[0]); // переводим в массив
+        String[] words = list.toArray(new String[0]);
         char[] alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".toCharArray();
         DictionaryStatistic stat = new DictionaryStatistic(words, alphabet);
         System.out.println(stat);
