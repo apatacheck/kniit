@@ -7,13 +7,12 @@ class Folder extends FileSystemComponent {
     private List<FileSystemComponent> children = new ArrayList<>();
 
     public Folder(String name) {
-
         super(name);
     }
 
     @Override
-    public long getSize() {
-        long totalSize = 0;
+    public double getSize() {
+        double totalSize = 0;
         for (FileSystemComponent component : children) {
             totalSize += component.getSize();
         }

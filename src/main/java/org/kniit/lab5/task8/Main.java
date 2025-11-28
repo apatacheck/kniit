@@ -7,7 +7,7 @@ public class Main {
         String[] names = {"Книга", "Ручка", "Блокнот", "Пенал", "Линейка"};
         Random random = new Random();
         ShopItem[] items = new ShopItem[100];
-        // генерируем тестовые данные
+
         for (int i = 0; i < items.length; i++) {
             String name = names[random.nextInt(names.length)];
             double price = 10 + random.nextInt(5) * 5;

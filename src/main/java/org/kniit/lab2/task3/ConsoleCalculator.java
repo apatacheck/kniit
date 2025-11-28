@@ -10,21 +10,21 @@ public class ConsoleCalculator {
         while (true) {
             System.out.print("Введите первое число: ");
             String firstInput = scanner.nextLine();
-            if (firstInput.equalsIgnoreCase("exit")) {
+            if (firstInput.equals("exit")) {
                 System.out.println("Выход из программы.");
                 break;
             }
 
             System.out.print("Введите оператор (+, -, *, /): ");
             String operator = scanner.nextLine();
-            if (operator.equalsIgnoreCase("exit")) {
+            if (operator.equals("exit")) {
                 System.out.println("Выход из программы.");
                 break;
             }
 
             System.out.print("Введите второе число: ");
             String secondInput = scanner.nextLine();
-            if (secondInput.equalsIgnoreCase("exit")) {
+            if (secondInput.equals("exit")) {
                 System.out.println("Выход из программы.");
                 break;
             }

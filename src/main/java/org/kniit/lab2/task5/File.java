@@ -1,15 +1,15 @@
 package org.kniit.lab2.task5;
 
 class File extends FileSystemComponent {
-    private long size;
+    private double size;
 
-    public File(String name, long size) {
+    public File(String name, double size) {
         super(name);
         this.size = size;
     }
 
     @Override
-    public long getSize() {
+    public double getSize() {
         return size;
     }
 

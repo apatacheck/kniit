@@ -8,35 +8,40 @@ class DictionaryStatistic {
     private int polindrom; // Количество слов полиндромов
     private int maxWordLength; // максимальная длина слова в словаре
     private int minWordLength; // минимальная длина слова в словаре
-    private char[] alphabet; // буквы алфавита
     private int[] frequency; // частота букв
-
     private Random random = new Random();
 
-    public DictionaryStatistic(String[] words, char[] alphabet) {
-        this.words = words;
-        this.alphabet = alphabet;
-        this.frequency = new int[alphabet.length];
 
+    private static  char[] alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".toCharArray();
+
+    public DictionaryStatistic(String[] words) {
+        this.words = words;
+        this.frequency = new int[alphabet.length];
         func();
     }
 
     private void func() {
         dictionarySize = words.length;
         maxWordLength = 0;
-        minWordLength = 100;
+        minWordLength = Integer.MAX_VALUE;
+        polindrom = 0;
 
         for (String word : words) {
+            if (word == null) continue;
+
             String w = word.toLowerCase();
             int len = w.length();
-        //длина слов
+
+            // длина слов
             if (len > maxWordLength) maxWordLength = len;
             if (len < minWordLength) minWordLength = len;
-            //палиндромы
+
+            // палиндромы
             if (isPalindrome(w)) {
                 polindrom++;
             }
 
+            // частота букв
             for (char c : w.toCharArray()) {
                 int index = getAlphabetIndex(c);
                 if (index != -1) {
@@ -51,10 +56,8 @@ class DictionaryStatistic {
         return w.equals(new StringBuilder(w).reverse().toString());
     }
 
-    private int getAlphabetIndex(char c)
-    {
-        for (int i = 0; i < alphabet.length; i++)
-        {
+    private int getAlphabetIndex(char c) {
+        for (int i = 0; i < alphabet.length; i++) {
             if (alphabet[i] == c) return i;
         }
         return -1;
@@ -69,8 +72,7 @@ class DictionaryStatistic {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Кол-во слов: " + dictionarySize + "\n" +
                 "Палиндромы: " + polindrom + "\n" +
                 "Минимальная длина: " + minWordLength + "\n" +
@@ -78,9 +80,7 @@ class DictionaryStatistic {
                 "Частота:\n" + getSymbolsStatString();
     }
 
-    public String getRandomWord()
-    {
+    public String getRandomWord() {
         return words[random.nextInt(words.length)];
     }
-
 }

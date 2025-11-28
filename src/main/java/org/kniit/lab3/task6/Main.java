@@ -5,7 +5,7 @@ public class Main {
 
         WarriorGuard warrior = new WarriorGuard("Танк");
         Mage mage = new Mage("Маг");
-        Priest priest = new Priest("Священник (Православный)");
+        Priest priest = new Priest("Мерси");
 //пример 1
         warrior.move(0, 0);
         mage.move(10, 10);

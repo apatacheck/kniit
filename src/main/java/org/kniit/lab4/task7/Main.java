@@ -14,8 +14,7 @@ public class Main {
         }
         scanner.close();
         String[] words = list.toArray(new String[0]);
-        char[] alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".toCharArray();
-        DictionaryStatistic stat = new DictionaryStatistic(words, alphabet);
+        DictionaryStatistic stat = new DictionaryStatistic(words);
         System.out.println(stat);
         System.out.println("\nСлучайное слово: " + stat.getRandomWord());
     }

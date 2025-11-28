@@ -7,11 +7,7 @@ abstract class FileSystemComponent {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public abstract long getSize();
+    public abstract double getSize();
     public abstract void display(String indent);
 
 

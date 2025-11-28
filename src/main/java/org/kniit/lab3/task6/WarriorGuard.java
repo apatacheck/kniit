@@ -8,6 +8,10 @@ class WarriorGuard extends Warrior {
     }
     @Override
     public void decreaseHealth(int value) {
+        if (!isAlive) {
+            System.out.println(name + " мертв, по нему нельзя нанести урон.");
+            return;
+        }
         int finalDamage = value - (defense);
         if (finalDamage < 0) finalDamage = 0;
         health -= finalDamage;
