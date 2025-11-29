@@ -1,3 +1,4 @@
+package org.kniit.lab2.task3;
 
 class Calculator {
     public double add(double a, double b) {

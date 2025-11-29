@@ -9,14 +9,15 @@ class DictionaryStatistic {
     private int maxWordLength; // максимальная длина слова в словаре
     private int minWordLength; // минимальная длина слова в словаре
     private int[] frequency; // частота букв
+    private char[] alphabet; // буквы алфавит
     private Random random = new Random();
 
 
-    private static  char[] alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".toCharArray();
-
-    public DictionaryStatistic(String[] words) {
+    public DictionaryStatistic(String[] words, char[] alphabet) {
         this.words = words;
+        this.alphabet = alphabet;
         this.frequency = new int[alphabet.length];
+
         func();
     }
 
