@@ -5,12 +5,12 @@ import java.util.Objects;
 public class ShopItem {
     private String name;
     private double price;
-    private int quantity;
+    private int amount;
 
-    public ShopItem(String name, double price, int quantity) {
+    public ShopItem(String name, double price, int amount) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
+        this.amount = amount;
     }
 
     public String getName() {
@@ -21,31 +21,30 @@ public class ShopItem {
         return price;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getAmount() {
+        return amount;
     }
 
     @Override
     public String toString() {
-        return "ShopItem{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return "Товар:" + name + " [Цена:" + price + ", Кол-во:" + amount + " ]";
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ShopItem)) return false;
-        ShopItem shopItem = (ShopItem) o;
-        return Double.compare(shopItem.price, price) == 0 &&
-                quantity == shopItem.quantity &&
-                Objects.equals(name, shopItem.name);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (!(obj instanceof ShopItem)) {
+            System.out.println("Нельзя сравнивать объекты разных типов!!");
+            return false;
+        } else {
+            ShopItem other = (ShopItem) obj;
+            return Double.compare(other.price, price) == 0 &&  amount == other.amount && Objects.equals(name, other.name);
+        }
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price, quantity);
+        return Objects.hash(name, price, amount);
     }
 }

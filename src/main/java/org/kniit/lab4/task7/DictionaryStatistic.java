@@ -23,7 +23,7 @@ class DictionaryStatistic {
     private void func() {
         dictionarySize = words.length;
         maxWordLength = 0;
-        minWordLength = Integer.MAX_VALUE;
+        minWordLength = 100;
         polindrom = 0;
 
         for (String word : words) {
