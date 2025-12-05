@@ -1,3 +1,5 @@
+package org.kniit.lab2.task3;
+
 import java.util.Scanner;
 
 public class ConsoleCalculator {
@@ -5,7 +7,7 @@ public class ConsoleCalculator {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        System.out.println("Консольный калькулятор (для выхода введите 'exit')");
+        System.out.println("Для выхода введите: exit");
 
         while (true) {
             System.out.print("Введите первое число: ");

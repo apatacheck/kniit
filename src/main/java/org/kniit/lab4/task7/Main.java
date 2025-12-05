@@ -10,13 +10,13 @@ public class Main {
         Scanner scanner = new Scanner(new File("misc/dictionary.txt"));
         ArrayList<String> list = new ArrayList<>();
         while (scanner.hasNext()) {
-            list.add(scanner.nextLine().trim());
+            list.add(scanner.nextLine());
         }
         scanner.close();
         String[] words = list.toArray(new String[0]);
-        DictionaryStatistic stat = new DictionaryStatistic(words);
+        char[] alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".toCharArray();
+        DictionaryStatistic stat = new DictionaryStatistic(words, alphabet);
         System.out.println(stat);
         System.out.println("\nСлучайное слово: " + stat.getRandomWord());
     }
 }
-

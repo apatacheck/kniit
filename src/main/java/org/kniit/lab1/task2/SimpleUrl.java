@@ -17,83 +17,102 @@ public class SimpleUrl {
     }
 
     public String getProtocol() {
-        return protocol;
+
+        return "protocol = " + protocol + "\n";
     }
 
     public void setProtocol(String protocol) {
+
         this.protocol = protocol;
     }
 
     public String getAddress() {
-        return address;
+
+        return "address = " + address + "\n";
     }
 
     public void setAddress(String address) {
+
         this.address = address;
     }
 
     public String getDomainZone() {
-        return domainZone;
+
+        return "domainZone = " + domainZone + "\n";
     }
 
     public void setDomainZone(String domainZone) {
+
         this.domainZone = domainZone;
     }
 
     public String getSiteName() {
-        return siteName;
+
+        return "siteName = " + siteName + "\n";
     }
 
     public void setSiteName(String siteName) {
+
         this.siteName = siteName;
     }
 
     public String getPath() {
-        return path;
+
+        return "path = " + path + "\n";
     }
 
     public void setPath(String path) {
+
         this.path = path;
     }
 
     public String getWebpageName() {
-        return webpageName;
+
+        return "webpageName = " + webpageName + "\n";
     }
 
     public void setWebpageName(String webpageName) {
+
         this.webpageName = webpageName;
     }
 
     public String getWebPageExtention() {
-        return webPageExtention;
+
+        return "webPageExtention = " + webPageExtention + "\n";
     }
 
     public void setWebPageExtention(String webPageExtention) {
+
         this.webPageExtention = webPageExtention;
     }
 
-    // Геттеры и сеттеры для параметров
     public String getIntParam() {
-        return intParam;
+
+        return "intParam = " + intParam + "\n";
     }
 
     public void setIntParam(String intParam) {
+
         this.intParam = intParam;
     }
 
     public String getDoubleParam() {
-        return doubleParam;
+
+        return "doubleParam = " + doubleParam + "\n";
     }
 
     public void setDoubleParam(String doubleParam) {
+
         this.doubleParam = doubleParam;
     }
 
     public String getTextParameter() {
-        return textParameter;
+
+        return "textParameter = " + textParameter;
     }
 
     public void setTextParameter(String textParameter) {
+
         this.textParameter = textParameter;
     }
 
@@ -109,5 +128,6 @@ public class SimpleUrl {
                 "intParam = " + intParam + "\n" +
                 "doubleParam = " + doubleParam + "\n" +
                 "textParameter = " + textParameter;
+
     }
 }

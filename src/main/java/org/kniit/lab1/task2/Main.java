@@ -2,7 +2,7 @@ package org.kniit.lab1.task2;
 
 public class Main {
     public static void main(String[] args) {
-        String url = "https://test.ru/test/1072/page.jsp?intParam=12345&doubleParam=3.14&textParameter=someText";
+        String url = "https://test.ru/test/1072/page.jsp";
         SimpleUrl simpleUrl = parseUrl(url);
         System.out.println(simpleUrl.toString());
     }
@@ -30,9 +30,11 @@ public class Main {
         //расширение
         simpleUrl.setWebPageExtention(webpageName.split("\\.")[1]);
         //параметры
+        String[] lenparam = url.split("\\?");
+        if (lenparam.length == 1)
+            return simpleUrl;
         String paramsString = url.split("\\?")[1];
         String[] params = paramsString.split("&");
-
         for (String param : params) {
             String[] clean_param = param.split("=");
             String key = clean_param[0];
