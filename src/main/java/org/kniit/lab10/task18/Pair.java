@@ -1,5 +1,6 @@
 package org.kniit.lab10.task18;
-
+//Создайте универсальный класс Pair, который будет хранить две связанные сущности.
+// Напишите методы для получения и изменения значений.
 public class Pair<T, U> {
     private T first;
     private U second;

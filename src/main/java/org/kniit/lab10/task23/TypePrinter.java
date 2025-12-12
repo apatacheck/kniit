@@ -1,5 +1,6 @@
 package org.kniit.lab10.task23;
-
+//Напишите универсальный метод printType,
+// который принимает объект любого типа и выводит на экран имя его класса.
 public class TypePrinter {
     public static <T> void printType(T obj) {
         if (obj == null) {

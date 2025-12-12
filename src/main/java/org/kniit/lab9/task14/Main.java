@@ -17,3 +17,5 @@ public class Main {
         scanner.close();
     }
 }
+//Создайте Enum TrafficLight с состояниями светофора: RED, YELLOW, GREEN.
+// Добавьте метод getNextLight(), который возвращает следующее состояние светофора.
