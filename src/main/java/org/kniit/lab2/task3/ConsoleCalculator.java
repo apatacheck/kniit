@@ -24,6 +24,7 @@ public class ConsoleCalculator {
                 break;
             }
 
+
             System.out.print("Введите второе число: ");
             String secondInput = scanner.nextLine();
             if (secondInput.equals("exit")) {

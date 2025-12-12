@@ -7,7 +7,6 @@ import java.util.List;
 class UserManager {
     private static final String FILE_NAME = "users.ser";
 
-    // Сохранение списка пользователей в файл
     public static void saveUsers(List<User> users) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(users);
@@ -17,12 +16,11 @@ class UserManager {
         }
     }
 
-    // Загрузка списка пользователей из файла
     public static List<User> loadUsers() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (List<User>) ois.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден. Начинаем с пустого списка.");
+            System.out.println("Файл не найден.");
             return new ArrayList<>();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Ошибка при загрузке файла: " + e.getMessage());
