@@ -1,4 +1,4 @@
-package org.kniit.lab11.task23;
+package org.kniit.lab11.task24;
 
 public class User {
     private int id;
@@ -18,6 +18,7 @@ public class User {
         this.email = email;
     }
 
+    // Геттеры и сеттеры
     public int getId() {
         return id;
     }
@@ -40,5 +41,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

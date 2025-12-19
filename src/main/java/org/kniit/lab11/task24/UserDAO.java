@@ -1,4 +1,4 @@
-package org.kniit.lab11.task23;
+package org.kniit.lab11.task24;
 
 import java.sql.SQLException;
 import java.util.List;
