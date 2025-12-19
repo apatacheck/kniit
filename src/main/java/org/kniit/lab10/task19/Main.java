@@ -1,5 +1,6 @@
 package org.kniit.lab10.task19;
-
+//Напишите универсальный метод findMax, который принимает массив элементов любого типа, реализующего интерфейс Comparable,
+// и возвращает максимальный элемент.
 public class Main {
     public static <T extends Comparable<T>> T findMax(T[] array) {
         if (array == null || array.length == 0) {

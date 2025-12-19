@@ -1,5 +1,6 @@
 package org.kniit.lab10.task22;
-
+//Создайте класс Dictionary<K, V>, который будет работать как словарь (ключ-значение).
+// Реализуйте методы для добавления, удаления и получения элементов.
 public class Main {
     public static void main(String[] args) {
         Dictionary<String, Integer> dictionary = new Dictionary<>();

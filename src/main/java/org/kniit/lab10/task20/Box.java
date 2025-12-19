@@ -1,5 +1,6 @@
 package org.kniit.lab10.task20;
-
+//Создайте класс Box с ограничением типа T extends Number.
+// Реализуйте метод для вычисления суммы всех чисел, хранящихся в контейнере.
 import java.util.ArrayList;
 import java.util.List;
 
