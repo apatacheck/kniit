@@ -6,10 +6,12 @@ public class FileApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        FileDAO fileDAO = new FileDAO();
         System.out.print("Введите путь к файлу или папке: ");
         String path = scanner.nextLine();
-
         FileProcessor processor = new FileProcessor();
         processor.processFiles(path);
+        fileDAO.printAllFiles();
+
     }
 }
