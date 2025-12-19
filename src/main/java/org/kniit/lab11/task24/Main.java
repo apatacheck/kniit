@@ -7,10 +7,14 @@ public class Main {
     public static void main(String[] args) {
         UserService userService = new UserService();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Консольное приложение для управления пользователями. Команды: add, delete, update");
+        System.out.println("Консольное приложение для управления пользователями. Команды:");
+        System.out.println("1. Добавить нового пользователя - add");
+        System.out.println("2. Показать всех пользователей - list");
+        System.out.println("3. Обновить пользователя - update");
+        System.out.println("4. Удалить пользователя - delete");
+        System.out.println("5. Выйти - exit");
 
         while (true) {
-            System.out.print("> ");
             String input = scanner.nextLine().trim();
             String[] parts = input.split("\\s+");
 
@@ -23,11 +27,17 @@ public class Main {
                         if (parts.length < 3) {
                             System.out.println("Использование: add [name] [email]");
                         } else {
-                            String name = parts[1];
-                            String email = parts[2];
+                            String email = parts[parts.length - 1];
+                            StringBuilder nameBuilder = new StringBuilder();
+                            for (int i = 1; i < parts.length - 1; i++) {
+                                nameBuilder.append(parts[i]);
+                                if (i < parts.length - 2) nameBuilder.append(" ");
+                            }
+                            String name = nameBuilder.toString();
                             userService.registerUser(name, email);
                         }
                         break;
+
                     case "list":
                         userService.listAllUsers();
                         break;
@@ -44,8 +54,13 @@ public class Main {
                             System.out.println("Использование: update [id] [new_name] [new_email]");
                         } else {
                             int id = Integer.parseInt(parts[1]);
-                            String newName = parts[2];
-                            String newEmail = parts[3];
+                            String newEmail = parts[parts.length - 1];
+                            StringBuilder nameBuilder = new StringBuilder();
+                            for (int i = 2; i < parts.length - 1; i++) {
+                                nameBuilder.append(parts[i]);
+                                if (i < parts.length - 2) nameBuilder.append(" ");
+                            }
+                            String newName = nameBuilder.toString();
                             userService.updateUser(id, newName, newEmail);
                         }
                         break;

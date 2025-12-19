@@ -18,16 +18,26 @@ public class UserApp {
             System.out.print("Введите номер действия: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
-                case 1 -> addUser();
-                case 2 -> showUsers();
-                case 3 -> UserManager.saveUsers(users);
-                case 4 -> users = UserManager.loadUsers();
-                case 5 -> {
+                case 1:
+                    addUser();
+                    break;
+                case 2:
+                    showUsers();
+                    break;
+                case 3:
+                    UserManager.saveUsers(users);
+                    break;
+                case 4:
+                    users = UserManager.loadUsers();
+                    break;
+                case 5:
                     UserManager.saveUsers(users);
                     System.out.println("Программа завершена.");
                     exit = true;
-                }
-                default -> System.out.println("Некорректный выбор. Попробуйте снова.");
+                    break;
+                default:
+                    System.out.println("Некорректный выбор. Попробуйте снова.");
+                    break;
             }
         }
     }
