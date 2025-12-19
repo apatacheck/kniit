@@ -11,7 +11,6 @@ public enum TrafficLight {
             TrafficLight.RED,
             TrafficLight.YELLOW,
             TrafficLight.GREEN,
-            TrafficLight.YELLOW
     };
 
     private TrafficLight(String title) { //конструктор
