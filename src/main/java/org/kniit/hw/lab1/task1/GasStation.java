@@ -1,7 +1,8 @@
 package org.kniit.hw.lab1.task1;
 
 class GasStation {
-
+//На автозаправочной станции только 2 колонки. Если все заняты, машины ждут в очереди.
+//Когда колонка освобождается, следующий автомобиль из очереди начинает заправку.
     private int freePumps = 2;
 
     public synchronized void takePump(String carName) {
