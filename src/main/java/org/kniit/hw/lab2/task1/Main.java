@@ -9,7 +9,7 @@ public class Main {
         System.out.println(s1);
         System.out.println(s2);
 
-        System.out.println(s1 == s2); // true
-        //Singleton s = new Singleton();
+        System.out.println(s1 == s2);
+        //Singleton s = new Singleton(); //
     }
 }

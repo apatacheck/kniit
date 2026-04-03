@@ -28,4 +28,4 @@ class Runner extends Thread {
             System.out.println("Прервано");
         }
     }
-}=
+}
