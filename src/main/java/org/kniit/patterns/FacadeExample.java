@@ -46,15 +46,23 @@ class VideoConverterFacade {
         VideoFile file = new VideoFile(sourceFileName);
 
         Codec sourceCodec = CodecFactory.extract(file);
-        Codec destCodec = switch (targetFormat.toLowerCase()) {
-            case "mp4" -> new MPEG4Codec();
-            case "h264" -> new H264Codec();
-            default -> throw new IllegalArgumentException("Неизвестный формат: " + targetFormat);
-        };
+
+        // Исправленный switch для Java 11
+        Codec destCodec;
+        switch (targetFormat.toLowerCase()) {
+            case "mp4":
+                destCodec = new MPEG4Codec();
+                break;
+            case "h264":
+                destCodec = new H264Codec();
+                break;
+            default:
+                throw new IllegalArgumentException("Неизвестный формат: " + targetFormat);
+        }
 
         System.out.println("Преобразуем " + sourceFileName +
-            " из " + sourceCodec.getClass().getSimpleName() +
-            " в " + destCodec.getClass().getSimpleName());
+                " из " + sourceCodec.getClass().getSimpleName() +
+                " в " + destCodec.getClass().getSimpleName());
 
         AudioMixer mixer = new AudioMixer();
         mixer.fix(file);
@@ -65,5 +73,3 @@ class VideoConverterFacade {
         System.out.println("Сохраняем итоговый файл в формате " + targetFormat);
     }
 }
-
-

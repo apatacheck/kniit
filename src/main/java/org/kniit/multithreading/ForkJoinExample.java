@@ -41,7 +41,6 @@ class SortTask extends RecursiveAction {
             array[j] = (k == hi || buf[i] < array[k]) ? buf[i++] : array[k++];
         }
     }
-
 }
 
 class SumTask extends RecursiveTask<Long> {
@@ -59,7 +58,6 @@ class SumTask extends RecursiveTask<Long> {
     SumTask(long[] array) {
         this(array, 0, array.length);
     }
-
 
     @Override
     protected Long compute() {
@@ -79,26 +77,37 @@ class SumTask extends RecursiveTask<Long> {
         }
         return sum;
     }
-
 }
 
 public class ForkJoinExample {
 
     public static void main(String[] args) {
         Random random = new Random();
-        long[] array = LongStream.generate(() -> random.nextLong(-5000, 5000))
-            .limit(10_000)
-            .toArray();
+
+        // Исправлено: nextLong(-5000, 5000) не работает в Java 11
+        long[] array = LongStream.generate(() -> {
+                    // Генерируем случайное число от -5000 до 5000
+                    return random.nextLong() % 10000 - 5000;
+                })
+                .limit(10_000)
+                .toArray();
+
         System.out.println("Before");
-        System.out.println(LongStream.of(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+        System.out.println(LongStream.of(array)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(", ")));
+
         SortTask sortTask = new SortTask(array);
         ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
         forkJoinPool.invoke(sortTask);
+
         System.out.println("After");
-        System.out.println(LongStream.of(array).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
+        System.out.println(LongStream.of(array)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(", ")));
+
         SumTask sumTask = new SumTask(array);
         Long result = forkJoinPool.invoke(sumTask);
         System.out.println("Sum = " + result);
     }
-
 }
